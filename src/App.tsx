@@ -5,6 +5,12 @@ import Tenants from "./pages/Tenants";
 import CreateTenant from "./pages/CreateTenant";
 import TenantDetails from "./pages/TenantDetails";
 import EditTenant from "./pages/EditTenant";
+import Organizations from "./pages/Organizations";
+
+import UserManagement from "./pages/UserManagement";
+
+import RoleManagement from "./pages/RoleManagement";
+
 
 function App() {
   return (
@@ -32,7 +38,11 @@ function App() {
             path="tenants/:id/edit"
             element={<EditTenant />}
           />
+          <Route path="/organizations" element={<Organizations />} />
+          <Route path="/users" element={<UserManagement />} />
+          <Route path="/roles" element={<RoleManagement />} />
         </Route>
+
       </Routes>
     </BrowserRouter>
   );
