@@ -19,9 +19,18 @@ function Sidebar() {
       path: "/users",
     },
     {
-      name: "Role Management",
-      path: "/roles",
+      name: "Permission Management",
+      path: "/permissions",
     },
+    {
+      name: "Data Management",
+      path: "/data-Permissions",
+    },
+    {
+      name: "platform Health",
+      path: "/platform-configuration",
+    },
+
   ];
 
   return (

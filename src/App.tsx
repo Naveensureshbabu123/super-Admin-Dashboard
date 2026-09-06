@@ -10,7 +10,9 @@ import Organizations from "./pages/Organizations";
 import UserManagement from "./pages/UserManagement";
 
 import RoleManagement from "./pages/RoleManagement";
-
+import PermissionManagement from "./pages/PermissionManagement";
+import DataPermissions from "./pages/DataPermissions";
+import PlatformConfiguration from "./pages/PlatformConfiguration";
 
 function App() {
   return (
@@ -40,7 +42,22 @@ function App() {
           />
           <Route path="/organizations" element={<Organizations />} />
           <Route path="/users" element={<UserManagement />} />
+
           <Route path="/roles" element={<RoleManagement />} />
+          <Route
+            path="/permissions"
+            element={<PermissionManagement />}
+          />
+
+          <Route
+            path="/data-permissions"
+            element={<DataPermissions />}
+          />
+
+          <Route
+            path="/platform-configuration"
+            element={<PlatformConfiguration />}
+          />
         </Route>
 
       </Routes>

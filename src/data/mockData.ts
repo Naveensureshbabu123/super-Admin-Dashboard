@@ -1156,3 +1156,130 @@ export const roles: Role[] = [
     created: "07 Aug 2026",
   },
 ];
+import type {
+  Permission,
+  DataPermission,
+  PlatformConfiguration,
+} from "../types/management";
+
+export const permissions: Permission[] = [
+  {
+    id: 1,
+    name: "View Dashboard",
+    module: "Dashboard",
+    description: "View global dashboard",
+    status: "Active",
+  },
+  {
+    id: 2,
+    name: "Manage Tenants",
+    module: "Tenant Management",
+    description: "Create, update and manage tenants",
+    status: "Active",
+  },
+  {
+    id: 3,
+    name: "Manage Organizations",
+    module: "Organization Management",
+    description: "Manage organizations",
+    status: "Active",
+  },
+  {
+    id: 4,
+    name: "Manage Users",
+    module: "User Management",
+    description: "Create and manage users",
+    status: "Active",
+  },
+  {
+    id: 5,
+    name: "Manage Roles",
+    module: "Role Management",
+    description: "Create and manage roles",
+    status: "Active",
+  },
+  {
+    id: 6,
+    name: "Manage Permissions",
+    module: "Permission Management",
+    description: "Manage system permissions",
+    status: "Active",
+  },
+  {
+    id: 7,
+    name: "View Audit Logs",
+    module: "Security",
+    description: "View system audit logs",
+    status: "Inactive",
+  },
+  {
+    id: 8,
+    name: "Manage Configuration",
+    module: "Platform Configuration",
+    description: "Manage platform settings",
+    status: "Active",
+  },
+];
+
+export const dataPermissions: DataPermission[] = [
+  {
+    id: 1,
+    role: "Super Admin",
+    module: "Tenant Management",
+    read: true,
+    create: true,
+    update: true,
+    delete: true,
+    export: true,
+  },
+  {
+    id: 2,
+    role: "Admin",
+    module: "User Management",
+    read: true,
+    create: true,
+    update: true,
+    delete: false,
+    export: true,
+  },
+  {
+    id: 3,
+    role: "Manager",
+    module: "Organization Management",
+    read: true,
+    create: true,
+    update: true,
+    delete: false,
+    export: false,
+  },
+  {
+    id: 4,
+    role: "User",
+    module: "Dashboard",
+    read: true,
+    create: false,
+    update: false,
+    delete: false,
+    export: false,
+  },
+  {
+    id: 5,
+    role: "Admin",
+    module: "Role Management",
+    read: true,
+    create: true,
+    update: true,
+    delete: false,
+    export: false,
+  },
+];
+
+export const platformConfiguration: PlatformConfiguration = {
+  platformName: "One Enterprise Cloud",
+  supportEmail: "support@oneenterprise.com",
+  country: "India",
+  timezone: "Asia/Kolkata",
+  maintenanceMode: false,
+  sessionTimeout: 30,
+  emailNotifications: true,
+};

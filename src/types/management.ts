@@ -27,3 +27,31 @@ export type Role = {
   status: "Active" | "Inactive";
   created: string;
 };
+export interface Permission {
+  id: number;
+  name: string;
+  module: string;
+  description: string;
+  status: "Active" | "Inactive";
+}
+
+export interface DataPermission {
+  id: number;
+  role: string;
+  module: string;
+  read: boolean;
+  create: boolean;
+  update: boolean;
+  delete: boolean;
+  export: boolean;
+}
+
+export interface PlatformConfiguration {
+  platformName: string;
+  supportEmail: string;
+  country: string;
+  timezone: string;
+  maintenanceMode: boolean;
+  sessionTimeout: number;
+  emailNotifications: boolean;
+}
