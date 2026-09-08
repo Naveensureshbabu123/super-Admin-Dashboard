@@ -30,6 +30,14 @@ function Sidebar() {
       name: "platform Health",
       path: "/platform-configuration",
     },
+    {
+      name: "Feature Management",
+      path: "/features",
+    },
+    {
+      name: "Subscription & License",
+      path: "/subscriptions",
+    },
 
   ];
 
@@ -54,10 +62,9 @@ function Sidebar() {
             to={item.path}
             end={item.path === "/"}
             className={({ isActive }) =>
-              `mb-2 block px-4 py-3 text-sm font-medium transition ${
-                isActive
-                  ? "bg-blue-600 text-white"
-                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
+              `mb-2 block px-4 py-3 text-sm font-medium transition ${isActive
+                ? "bg-blue-600 text-white"
+                : "text-slate-300 hover:bg-slate-800 hover:text-white"
               }`
             }
           >

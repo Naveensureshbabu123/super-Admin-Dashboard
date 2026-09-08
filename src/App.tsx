@@ -13,7 +13,8 @@ import RoleManagement from "./pages/RoleManagement";
 import PermissionManagement from "./pages/PermissionManagement";
 import DataPermissions from "./pages/DataPermissions";
 import PlatformConfiguration from "./pages/PlatformConfiguration";
-
+import FeatureManagement from "./pages/FeatureManagement";
+import SubscriptionManagement from "./pages/SubscriptionManagement";
 function App() {
   return (
     <BrowserRouter>
@@ -59,6 +60,15 @@ function App() {
             element={<PlatformConfiguration />}
           />
         </Route>
+        <Route
+          path="features"
+          element={<FeatureManagement />}
+        />
+
+        <Route
+          path="subscriptions"
+          element={<SubscriptionManagement />}
+        />
 
       </Routes>
     </BrowserRouter>

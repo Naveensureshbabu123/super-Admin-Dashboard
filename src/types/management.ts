@@ -55,3 +55,24 @@ export interface PlatformConfiguration {
   sessionTimeout: number;
   emailNotifications: boolean;
 }
+export interface Feature {
+  id: number;
+  name: string;
+  description: string;
+  category: string;
+  status: "Enabled" | "Disabled";
+  tenants: number;
+  updated: string;
+}
+
+export interface Subscription {
+  id: number;
+  tenant: string;
+  plan: "Basic" | "Pro" | "Enterprise";
+  status: "Active" | "Expired" | "Expiring Soon";
+  users: number;
+  licenses: number;
+  startDate: string;
+  expiryDate: string;
+  amount: number;
+}

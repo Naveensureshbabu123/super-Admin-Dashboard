@@ -5,6 +5,8 @@ import {
   permissions,
   dataPermissions,
   platformConfiguration,
+  features,
+  subscriptions,
 } from "../data/mockData";
 
 import type { PlatformConfiguration } from "../types/management";
@@ -31,6 +33,13 @@ export function getDataPermissions() {
 
 export function getPlatformConfiguration() {
   return Promise.resolve(platformConfiguration);
+}
+export function getFeatures() {
+  return Promise.resolve(features);
+}
+
+export function getSubscriptions() {
+  return Promise.resolve(subscriptions);
 }
 
 export async function updatePlatformConfiguration(
