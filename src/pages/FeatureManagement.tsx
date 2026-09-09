@@ -1,3 +1,4 @@
+import Card from "../components/dashboard/Card";
 import { useFeatures } from "../hooks/useFeatures";
 
 function FeatureManagement() {
@@ -47,36 +48,30 @@ function FeatureManagement() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Total Features
-          </p>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <Card
+          title="Total Features"
+          value={data?.length ?? 0}
+          description="All platform features"
+        />
 
-          <p className="mt-2 text-2xl font-bold text-gray-800">
-            {data?.length ?? 0}
-          </p>
-        </div>
+        <Card
+          title="Enabled Features"
+          value={enabled}
+          description="Currently enabled"
+        />
 
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Enabled Features
-          </p>
+        <Card
+          title="Disabled Features"
+          value={disabled}
+          description="Currently disabled"
+        />
 
-          <p className="mt-2 text-2xl font-bold text-green-600">
-            {enabled}
-          </p>
-        </div>
-
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Feature Usage
-          </p>
-
-          <p className="mt-2 text-2xl font-bold text-blue-600">
-            {totalTenants}
-          </p>
-        </div>
+        <Card
+          title="Feature Usage"
+          value={totalTenants}
+          description="Total tenant usage"
+        />
       </div>
 
       <div className="overflow-x-auto border border-gray-200 bg-white">

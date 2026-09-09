@@ -1,8 +1,8 @@
+import Card from "../components/dashboard/Card";
 import { useSubscriptions } from "../hooks/useSubscriptions";
 
 function SubscriptionManagement() {
-  const { data, isLoading, isError } =
-    useSubscriptions();
+  const { data, isLoading, isError } = useSubscriptions();
 
   if (isLoading) {
     return (
@@ -57,46 +57,36 @@ function SubscriptionManagement() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Total Subscriptions
-          </p>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <Card
+          title="Total Subscriptions"
+          value={data?.length ?? 0}
+          description="All subscriptions"
+        />
 
-          <p className="mt-2 text-2xl font-bold">
-            {data?.length ?? 0}
-          </p>
-        </div>
+        <Card
+          title="Active"
+          value={active}
+          description="Currently active"
+        />
 
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Active
-          </p>
+        <Card
+          title="Expiring Soon"
+          value={expiring}
+          description="Need attention"
+        />
 
-          <p className="mt-2 text-2xl font-bold text-green-600">
-            {active}
-          </p>
-        </div>
+        <Card
+          title="Expired"
+          value={expired}
+          description="Expired subscriptions"
+        />
 
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Expiring Soon
-          </p>
-
-          <p className="mt-2 text-2xl font-bold text-yellow-600">
-            {expiring}
-          </p>
-        </div>
-
-        <div className="border border-gray-200 bg-white p-5">
-          <p className="text-sm text-gray-500">
-            Total Licenses
-          </p>
-
-          <p className="mt-2 text-2xl font-bold text-blue-600">
-            {totalLicenses}
-          </p>
-        </div>
+        <Card
+          title="Total Licenses"
+          value={totalLicenses}
+          description="Total available licenses"
+        />
       </div>
 
       <div className="overflow-x-auto border border-gray-200 bg-white">
@@ -176,10 +166,9 @@ function SubscriptionManagement() {
                     className={`px-3 py-1 text-xs font-medium ${
                       subscription.status === "Active"
                         ? "bg-green-100 text-green-700"
-                        : subscription.status ===
-                            "Expiring Soon"
-                          ? "bg-yellow-100 text-yellow-700"
-                          : "bg-red-100 text-red-700"
+                        : subscription.status === "Expiring Soon"
+                        ? "bg-yellow-100 text-yellow-700"
+                        : "bg-red-100 text-red-700"
                     }`}
                   >
                     {subscription.status}
