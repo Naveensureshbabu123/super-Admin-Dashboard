@@ -76,3 +76,42 @@ export interface Subscription {
   expiryDate: string;
   amount: number;
 }
+export interface AuditLog {
+  id: number;
+  user: string;
+  action: string;
+  module: string;
+  description: string;
+  ipAddress: string;
+  date: string;
+  status: "Success" | "Failed";
+}
+
+export interface Notification {
+  id: number;
+  title: string;
+  message: string;
+  type: "Info" | "Warning" | "Alert" | "Success";
+  recipient: string;
+  status: "Read" | "Unread";
+  date: string;
+}
+
+export interface MonitoringService {
+  id: number;
+  service: string;
+  status: "Healthy" | "Warning" | "Down";
+  responseTime: number;
+  uptime: string;
+}
+
+export interface SystemMonitoring {
+  cpu: number;
+  memory: number;
+  storage: number;
+  network: number;
+  apiGateway: string;
+  database: string;
+  authentication: string;
+  notificationService: string;
+}

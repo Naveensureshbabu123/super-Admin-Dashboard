@@ -7,6 +7,10 @@ import {
   platformConfiguration,
   features,
   subscriptions,
+  auditLogs,
+  notifications,
+  monitoringServices,
+  systemMonitoring,
 } from "../data/mockData";
 
 import type { PlatformConfiguration } from "../types/management";
@@ -40,6 +44,21 @@ export function getFeatures() {
 
 export function getSubscriptions() {
   return Promise.resolve(subscriptions);
+}
+export function getAuditLogs() {
+  return Promise.resolve(auditLogs);
+}
+
+export function getNotifications() {
+  return Promise.resolve(notifications);
+}
+
+export function getMonitoringServices() {
+  return Promise.resolve(monitoringServices);
+}
+
+export function getSystemMonitoring() {
+  return Promise.resolve(systemMonitoring);
 }
 
 export async function updatePlatformConfiguration(

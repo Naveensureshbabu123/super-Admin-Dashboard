@@ -19,15 +19,19 @@ function Sidebar() {
       path: "/users",
     },
     {
+      name: "Role Management",
+      path: "/roles",
+    },
+    {
       name: "Permission Management",
       path: "/permissions",
     },
     {
-      name: "Data Management",
-      path: "/data-Permissions",
+      name: "Data Permissions",
+      path: "/data-permissions",
     },
     {
-      name: "platform Health",
+      name: "Platform Configuration",
       path: "/platform-configuration",
     },
     {
@@ -38,7 +42,15 @@ function Sidebar() {
       name: "Subscription & License",
       path: "/subscriptions",
     },
-
+    {
+      name: "Audit Logs",
+      path: "/audit-logs",
+    },
+    
+    {
+      name: "Monitoring",
+      path: "/monitoring",
+    },
   ];
 
   return (
@@ -55,16 +67,17 @@ function Sidebar() {
         </div>
       </div>
 
-      <nav className="p-4">
+      <nav className="h-[calc(100vh-4rem)] overflow-y-auto p-4">
         {menuItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             end={item.path === "/"}
             className={({ isActive }) =>
-              `mb-2 block px-4 py-3 text-sm font-medium transition ${isActive
-                ? "bg-blue-600 text-white"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white"
+              `mb-2 block px-4 py-3 text-sm font-medium transition ${
+                isActive
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
               }`
             }
           >
